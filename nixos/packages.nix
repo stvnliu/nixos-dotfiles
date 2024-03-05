@@ -27,5 +27,6 @@
 		shotwell
 		kdenlive
 		flameshot
+		discord
 	];
 }
