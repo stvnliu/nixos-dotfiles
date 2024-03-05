@@ -24,5 +24,7 @@
 		fzf
 		zoxide
 		gparted
+		shotwell
+		kdenlive
 	];
 }
