@@ -13,6 +13,7 @@
 			./bootloader.nix
 			./home-manager.nix
 			./fonts.nix
+			./packages.nix
 		];
 	nixpkgs.config.allowUnfree = true;
 	hardware.opengl = {
@@ -34,10 +35,6 @@
 
 	networking.hostName = "nixos"; # Define your hostname.
 # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-
-# Configure network proxy if necessary
-# networking.proxy.default = "http://user:password@proxy:port/";
-# networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
 # Enable networking
 	networking.networkmanager.enable = true;
@@ -81,31 +78,9 @@
 		packages = with pkgs; [];
 	};
 
-# Allow unfree packages
-
 # List packages installed in system profile. To search, run:
 # $ nix search wget
-	environment.systemPackages = with pkgs; [
-		vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-		wget
-		firefox
-		dmenu
-		st
-		neofetch
-		lshw
-		libreoffice
-		ranger
-		pavucontrol
-		vscode-with-extensions
-		(where-is-my-sddm-theme.override {
-		 themeConfig.General = {
-		 background = "./login.jpg";
-		 backgroundMode = "fill";
-		 };
-		 })
-		neovim
-		hello
-	];
+	
 
 # Some programs need SUID wrappers, can be configured further or are
 # started in user sessions.

@@ -9,7 +9,7 @@
 			efiSupport = true;
 			device = "nodev";
 			useOSProber = true;
-			configurationLimit = 5;
+			configurationLimit = 10;
 			theme = pkgs.stdenv.mkDerivation {
 				pname = "distro-grub-themes";
 				version = "3.1";
