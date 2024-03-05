@@ -26,5 +26,6 @@
 		gparted
 		shotwell
 		kdenlive
+		flameshot
 	];
 }

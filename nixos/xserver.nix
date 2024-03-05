@@ -1,4 +1,4 @@
-{config, ...}:
+{config, pkgs, ...}:
 {
 	services.xserver = {
 		videoDrivers = ["nvidia"]; # or "nvidiaLegacy470 etc.
@@ -7,7 +7,10 @@
 		};
 		windowManager = {
 			dwm = {
-				enable = true;	
+				enable = true;
+				package = pkgs.dwm.override {
+					conf = ./config.h
+				}
 			};
 		};
 	};
