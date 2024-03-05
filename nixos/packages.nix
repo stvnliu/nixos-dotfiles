@@ -23,5 +23,6 @@
         	stow
 		fzf
 		zoxide
+		gparted
 	];
 }
