@@ -20,6 +20,8 @@
 		 })
 		neovim
 		hello
-        stow
+        	stow
+		fzf
+		zoxide
 	];
 }
