@@ -2,7 +2,6 @@
 {
 	environment.systemPackages = with pkgs; [
 		# Editors: vim and nvim
-		vim
 		neovim
 
 		# helpers: wget and lshw

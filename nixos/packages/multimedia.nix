@@ -6,5 +6,6 @@
 		ffmpeg
 		firefox
 		libreoffice
+		thunderbird
 	];
 }
