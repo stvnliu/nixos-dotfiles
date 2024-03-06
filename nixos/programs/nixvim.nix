@@ -25,7 +25,6 @@ in
 			nvim-treesitter
 			vim-indent-guides
 			mason-nvim
-			mason-lspconfig-nvim
 			nvim-lspconfig
 		];
 		colorschemes.tokyonight.enable = true;
