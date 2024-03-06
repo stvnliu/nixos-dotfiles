@@ -10,7 +10,7 @@ let
   });
 in
 { # home-manager
-  home.packages = with pkgs; [
+  environment.systemPackages = with pkgs; [
     tex
     texstudio
   ];
