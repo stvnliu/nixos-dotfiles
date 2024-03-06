@@ -25,11 +25,6 @@ in
 		colorschemes.tokyonight.enable = true;
 		plugins = {
 			nerdtree.enable = true;
-			vim-gitgutter.enable = true;
-			nvim-treesitter.enable = true;
-			vim-indent-guides.enable = true;
-			mason-nvim.enable = true;
-			nvim-lspconfig.enable = true;
 		};
 	};
 }
