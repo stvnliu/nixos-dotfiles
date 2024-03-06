@@ -24,7 +24,9 @@ in
 			vim-gitgutter
 			nvim-treesitter
 			vim-indent-guides
-			mason
+			mason-nvim
+			mason-lspconfig-nvim
+			nvim-lspconfig
 		];
 		colorschemes.tokyonight.enable = true;
 		plugins = {
@@ -32,7 +34,9 @@ in
 			vim-gitgutter.enable = true;
 			nvim-treesitter.enable = true;
 			vim-indent-guides.enable = true;
-			mason.enable = true;
+			mason-nvim.enable = true;
+			mason-lspconfig-nvim.enable = true;
+			nvim-lspconfig.enable = true;
 		};
 	};
 }
