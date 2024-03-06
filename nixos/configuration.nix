@@ -16,6 +16,10 @@
 			./packages.nix
 			./programs.nix
 		];
+	nix.settings.experimental-features = [
+		"nix-command"
+		"flakes"
+	];
 	nixpkgs.config.allowUnfree = true;
 	hardware.opengl = {
 		enable = true;
