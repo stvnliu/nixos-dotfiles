@@ -7,5 +7,7 @@
 		firefox
 		libreoffice
 		thunderbird
+		rhythmbox
+		spotifywm
 	];
 }
