@@ -13,5 +13,6 @@ in
   environment.systemPackages = with pkgs; [
     tex
     texstudio
+    biber
   ];
 }
