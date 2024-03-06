@@ -15,6 +15,7 @@
 			./fonts.nix
 			./packages.nix
 			./programs.nix
+			./scripts.nix
 		];
 	nix.settings.experimental-features = [
 		"nix-command"
