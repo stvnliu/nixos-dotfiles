@@ -28,7 +28,7 @@
 			ll = "ls -l";
 			update = "sudo nixos-rebuild switch";
 		};
-		oh-my-zsh = {
+		ohMyZsh = {
 			enable = true;
 			plugins = ["git"];
 			theme = "robbyrussell";
