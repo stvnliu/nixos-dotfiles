@@ -13,8 +13,26 @@ in
 
 	programs.nixvim = {
 		enable = true;
-		extraPlugins = [ pkgs.vimPlugins.gruvbox ];
-		colorschemes.gruvbox.enable = true;
-		plugins.lightline.enable = true;
+		options = {
+			number = true;
+			relativenumber = true;
+			shiftwidth = 8;
+		};
+		extraPlugins = with pkgs.vimPlugins; [
+			tokyonight-nvim
+			nerdtree
+			vim-gitgutter
+			nvim-treesitter
+			vim-indent-guides
+			mason
+		];
+		colorschemes.tokyonight.enable = true;
+		plugins = {
+			nerdtree.enable = true;
+			vim-gitgutter.enable = true;
+			nvim-treesitter.enable = true;
+			vim-indent-guides.enable = true;
+			mason.enable = true;
+		};
 	};
 }
