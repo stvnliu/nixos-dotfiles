@@ -3,7 +3,7 @@
 	environment.systemPackages = with pkgs; [
 		dmenu
 		st
-		dwm-status
+		slstatus
 		(
 		where-is-my-sddm-theme.override {
 		 	themeConfig.General = {
