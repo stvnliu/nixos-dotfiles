@@ -10,5 +10,7 @@
 		rhythmbox
 		spotifywm
 		feh
+		texlive.combined.scheme-medium
+		texstudio
 	];
 }
