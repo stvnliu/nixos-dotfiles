@@ -19,12 +19,11 @@ in
 			shiftwidth = 8;
 		};
 		extraPlugins = with pkgs.vimPlugins; [
-			tokyonight-nvim
-			nerdtree
+			vim-nix
 		];
-		colorschemes.tokyonight.enable = true;
+		colorschemes.gruvbox.enable = true;
 		plugins = {
-			nerdtree.enable = true;
+			lightline.enable = true;
 		};
 	};
 }
