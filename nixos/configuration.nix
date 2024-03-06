@@ -21,6 +21,22 @@
 		driSupport = true;
 		driSupport32Bit = true;
 	};
+	programs.zsh = {
+		enable = true;
+		syntaxHighlighting.enable = true;
+		shellAliases = {
+			ll = "ls -l";
+			update = "sudo nixos-rebuild switch";
+		};
+		oh-my-zsh = {
+			enable = true;
+			plugins = ["git"];
+			theme = "robbyrussell";
+		};
+	};
+	users.users.zhonghengl = {
+		shell = pkgs.zsh;
+	};
 
 # rtkit is optional but recommended
 	security.rtkit.enable = true;

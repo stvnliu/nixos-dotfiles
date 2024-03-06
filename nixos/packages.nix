@@ -28,5 +28,7 @@
 		kdenlive
 		flameshot
 		discord
+		nodejs
+		teams-for-linux
 	];
 }
