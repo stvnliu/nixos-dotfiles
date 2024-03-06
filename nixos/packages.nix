@@ -7,5 +7,6 @@
 		./packages/utils.nix
 		./packages/wm-components.nix
 		./packages/misc.nix
+		./packages/tex.nix
 	];
 }
