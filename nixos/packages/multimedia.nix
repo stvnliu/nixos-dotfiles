@@ -9,5 +9,6 @@
 		thunderbird
 		rhythmbox
 		spotifywm
+		feh
 	];
 }

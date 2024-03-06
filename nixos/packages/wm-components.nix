@@ -4,6 +4,7 @@
 		dmenu
 		st
 		slstatus
+		dunst
 		(
 		where-is-my-sddm-theme.override {
 		 	themeConfig.General = {

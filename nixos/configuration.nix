@@ -75,6 +75,7 @@
 	services.picom.enable = true;
 	services.blueman.enable = true;
 	services.gnome.gnome-keyring.enable = true;
+	services.dunst.enable = true;
 	services.xserver.displayManager.sddm = {
 		enable = true;
 		theme = "where_is_my_sddm_theme";
