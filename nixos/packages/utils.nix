@@ -15,5 +15,8 @@
 		stow # dotfiles configuration
 		fzf # fuzzy finder cli
 		zoxide # fuzzy cd replacement
+
+		gparted
+		gimp
 	];
 }
