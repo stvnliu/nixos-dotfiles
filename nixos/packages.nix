@@ -6,5 +6,6 @@
 		./packages/multimedia.nix
 		./packages/utils.nix
 		./packages/wm-components.nix
+		./packages/misc.nix
 	];
 }
