@@ -6,7 +6,7 @@
 			sessionCommands = ''
 			xset r rate 250 50
 			xrandr --output HDMI-1 --same-as eDP-1
-			slstatus &
+			dwm-status &
 			'';
 		};
 		windowManager = {
