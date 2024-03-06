@@ -4,5 +4,6 @@
 		neofetch
 		lolcat
 		cmatrix
+		yt-dlp
 	];
 }
