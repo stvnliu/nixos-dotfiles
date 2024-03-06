@@ -5,6 +5,7 @@
 		st
 		slstatus
 		dunst
+		libnotify
 		(
 		where-is-my-sddm-theme.override {
 		 	themeConfig.General = {
