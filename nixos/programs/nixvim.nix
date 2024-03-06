@@ -21,11 +21,6 @@ in
 		extraPlugins = with pkgs.vimPlugins; [
 			tokyonight-nvim
 			nerdtree
-			vim-gitgutter
-			nvim-treesitter
-			vim-indent-guides
-			mason-nvim
-			nvim-lspconfig
 		];
 		colorschemes.tokyonight.enable = true;
 		plugins = {
