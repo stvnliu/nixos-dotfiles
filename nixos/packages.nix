@@ -30,5 +30,6 @@
 		discord
 		nodejs
 		teams-for-linux
+		upower
 	];
 }
