@@ -34,7 +34,6 @@ in
 			nvim-treesitter.enable = true;
 			vim-indent-guides.enable = true;
 			mason-nvim.enable = true;
-			mason-lspconfig-nvim.enable = true;
 			nvim-lspconfig.enable = true;
 		};
 	};
