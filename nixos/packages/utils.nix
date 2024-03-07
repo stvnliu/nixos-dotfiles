@@ -18,5 +18,7 @@
 
 		gparted
 		gimp
+
+		flameshot
 	];
 }
