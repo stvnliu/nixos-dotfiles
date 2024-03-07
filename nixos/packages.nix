@@ -8,5 +8,6 @@
 		./packages/wm-components.nix
 		./packages/misc.nix
 		./packages/tex.nix
+		./packages/office.nix
 	];
 }
