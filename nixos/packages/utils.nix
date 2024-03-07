@@ -20,5 +20,7 @@
 		gimp
 
 		flameshot
+
+		htop
 	];
 }
