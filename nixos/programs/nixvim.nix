@@ -23,16 +23,24 @@ in
 		];
 		colorschemes.gruvbox.enable = true;
 		plugins = {
+			alpha.enable = true;
+			chadtree.enable = true;
 			telescope.enable = true;
 			oil.enable = true;
 			treesitter.enable = true;
 			luasnip.enable = true;
 			lightline.enable = true;
+			gitsigns.enable = true;
+			barbar.enable = true;
 			lsp = {
 				enable = true;
 				servers = {
 					tsserver.enable = true;
 					lua-ls.enable = true;
+					bashls.enable = true;
+					jsonls.enable = true;
+					pylsp.enable = true;
+					
 				};
 			};
 		};
