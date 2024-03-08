@@ -1,4 +1,16 @@
-{config, pkgs, ...}: {
+{config, pkgs, ...}: 
+{
+	boot.supportedFilesystems = [ "ntfs" ];
+	#fileSystems."/mnt/winsys" = {
+	#	device = "/dev/nvme0n1p5";
+	#	fsType = "ntfs-3g";
+	#	options = [ "rw" "uid=1000" ];
+	#};
+	#fileSystems."/mnt/windata" = {
+	#	device = "/dev/nvme0n1p3";
+	#	fsType = "ntfs-3g";
+	#	options = [ "rw" "uid=1000" ];
+	#};
 	boot.loader = {
 		efi = {
 			canTouchEfiVariables = true;

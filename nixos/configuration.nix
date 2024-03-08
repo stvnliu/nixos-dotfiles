@@ -26,6 +26,14 @@
 		driSupport = true;
 		driSupport32Bit = true;
 	};
+	hardware.sane = {
+		enable = true;
+		extraBackends = with pkgs; [ 
+			sane-airscan 
+			#epkowa
+			utsushi
+			];
+	};
 	users.users.zhonghengl = {
 		shell = pkgs.zsh;
 	};
@@ -33,6 +41,15 @@
 # rtkit is optional but recommended
 	security.rtkit.enable = true;
 	services.upower.enable = true;
+	services.printing = {
+		enable = true;
+		drivers = [];
+	};
+	services.avahi = {
+		enable = true;
+		nssmdns = true;
+		openFirewall = true;
+	};
 	services.pipewire = {
 		enable = true;
 		alsa.enable = true;
