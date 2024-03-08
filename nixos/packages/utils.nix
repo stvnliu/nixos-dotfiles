@@ -22,5 +22,7 @@
 		flameshot
 
 		htop
+		bat
+		eza
 	];
 }
