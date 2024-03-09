@@ -9,7 +9,8 @@
 		lshw
 
 		# file browser and volume
-		ranger
+		#ranger
+		mc
 		pavucontrol
 		hello # hello world NixOS test
 		stow # dotfiles configuration
