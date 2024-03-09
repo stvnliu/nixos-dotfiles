@@ -9,5 +9,6 @@
 		./packages/misc.nix
 		./packages/tex.nix
 		./packages/office.nix
+		./packages/games.nix
 	];
 }
