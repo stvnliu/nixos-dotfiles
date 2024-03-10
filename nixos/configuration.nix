@@ -1,7 +1,3 @@
-# Edit this configuration file to define what should be installed on
-# your system.  Help is available in the configuration.nix(5) man page
-# and in the NixOS manual (accessible by running ‘nixos-help’).
-
 { config, pkgs, ... }:
 
 {
@@ -55,8 +51,7 @@
 		alsa.enable = true;
 		alsa.support32Bit = true;
 		pulse.enable = true;
-# If you want to use JACK applications, uncomment this
-#jack.enable = true;
+		#jack.enable = true;
 	};
 
 	networking.hostName = "nixos"; # Define your hostname.
@@ -82,6 +77,14 @@
 		LC_TELEPHONE = "en_US.UTF-8";
 		LC_TIME = "en_US.UTF-8";
 	};
+	i18n.inputMethod = {
+		enabled = "fcitx5";
+		fcitx5.addons = with pkgs; [ 
+		fcitx5-mozc 
+		fcitx5-gtk
+		fcitx5-rime
+		];
+	};
 	hardware.bluetooth.enable = true;
 	hardware.bluetooth.powerOnBoot = true;
 # Configure keymap in X11
@@ -105,38 +108,36 @@
 		packages = with pkgs; [];
 	};
 
-# List packages installed in system profile. To search, run:
-# $ nix search wget
-	
-
-# Some programs need SUID wrappers, can be configured further or are
-# started in user sessions.
-# programs.mtr.enable = true;
-# programs.gnupg.agent = {
-#   enable = true;
-#   enableSSHSupport = true;
-# };
-
-# List services that you want to enable:
-
-# Enable the OpenSSH daemon.
 	services.openssh.enable = true;
 
 # Open ports in the firewall.
-# networking.firewall.allowedTCPPorts = [ ... ];
-# networking.firewall.allowedUDPPorts = [ ... ];
+networking.firewall.allowedTCPPorts = [ 80 ];
+networking.firewall.allowedUDPPorts = [ ];
 # Or disable the firewall altogether.
 # networking.firewall.enable = false;
-	environment.etc = {
-		"wireplumber/bluetooth.lua.d/51-bluez-config.lua".text = ''
-			bluez_monitor.properties = {
-				["bluez5.enable-sbc-xq"] = true,
-				["bluez5.enable-msbc"] = true,
-				["bluez5.enable-hw-volume"] = true,
-				["bluez5.headset-roles"] = "[ hsp_hs hsp_ag hfp_hf hfp_ag ]"
-			}
-		'';
-	};
+environment.etc = 
+#let 
+#	json = pkgs.formats.json {}; 
+#in
+{
+	"wireplumber/bluetooth.lua.d/51-bluez-config.lua".text = ''
+		bluez_monitor.properties = {
+			["bluez5.enable-sbc-xq"] = true,
+			["bluez5.enable-msbc"] = true,
+			["bluez5.enable-hw-volume"] = true,
+			["bluez5.headset-roles"] = "[ hsp_hs hsp_ag hfp_hf hfp_ag ]"
+		}
+	'';
+	#"pipewire/pipewire.d/92-low-latency.conf".source = json.generate "92-low-latency.conf" {
+  	#	context.properties = {
+    	#		default.clock.rate = 48000;
+    	#		default.clock.quantum = 32;
+    	#		default.clock.min-quantum = 32;
+    	#		default.clock.max-quantum = 32;
+  	#	};
+	#};
+};
+
 # This value determines the NixOS release from which the default
 # settings for stateful data, like file locations and database versions
 # on your system were taken. It‘s perfectly fine and recommended to leave

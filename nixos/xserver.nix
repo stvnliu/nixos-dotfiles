@@ -14,11 +14,9 @@
 			dwm = {
 				enable = true;
 				package = pkgs.dwm.override {
-					patches = with pkgs; [
-						(fetchpatch {
-							url = "https://dwm.suckless.org/patches/flextile/dwm-flextile-20210722-138b405.diff";
-							sha256 = "005f2j38dkygc15c8531i4b0ixjxy1a9bl6a3wa0ac570ikhi9lg";
-						})
+					patches = [
+						./patches/dwm/dwm-flextile-20210722-138b405.diff
+						./patches/dwm/dwm-systray-6.4.diff
 					];
 				};
 			};

@@ -1,7 +1,6 @@
 {config, lib, pkgs, ...}:
 {
-	environment.systemPackages = [
-		steam
+	environment.systemPackages = with pkgs; [
 		prismlauncher
 	];
 }

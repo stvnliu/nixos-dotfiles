@@ -21,6 +21,9 @@ in
 		extraPlugins = with pkgs.vimPlugins; [
 			gruvbox
 		];
+		highlight = {
+			Normal.ctermbg = "none";
+		};
 		colorschemes.gruvbox.enable = true;
 		plugins = {
 			alpha.enable = true;
