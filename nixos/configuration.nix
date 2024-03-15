@@ -41,6 +41,10 @@
 		enable = true;
 		drivers = [];
 	};
+	services.mysql = {
+		enable = true;
+		package = pkgs.mariadb;
+	};
 	services.avahi = {
 		enable = true;
 		nssmdns = true;

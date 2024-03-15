@@ -9,7 +9,10 @@
 				ms-python.python
 				ms-vscode-remote.remote-ssh
 				vscodevim.vim
+				redhat.java
+				vscjava.vscode-spring-initializr
 			];
 		})
+		maven
 	];
 }

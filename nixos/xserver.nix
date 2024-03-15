@@ -8,6 +8,8 @@
 			xrandr --output HDMI-1 --same-as eDP-1
 			feh --bg-scale ~/wallpaper.png
 			slstatus &
+			fcitx5 &
+			mpris-proxy &
 			'';
 		};
 		windowManager = {

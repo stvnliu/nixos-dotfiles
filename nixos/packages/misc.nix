@@ -6,5 +6,7 @@
 		neofetch
 		lolcat
 		cmatrix
+
+		android-file-transfer
 	];
 }
