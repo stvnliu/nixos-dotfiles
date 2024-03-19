@@ -18,6 +18,7 @@
 		zoxide # fuzzy cd replacement
 
 		gparted
+		udiskie
 		gimp
 
 		flameshot

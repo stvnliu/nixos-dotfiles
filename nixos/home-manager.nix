@@ -21,8 +21,10 @@
 				};
 			};
 		};
-		systemd.user.services.mpris-proxy = {
-			enable = true;
+		systemd.user.services = {
+			mpris-proxy = {
+				enable = true;
+			};
 		};
 	};
 }
