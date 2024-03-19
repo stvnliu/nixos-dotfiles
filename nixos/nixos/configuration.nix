@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ pkgs, inputs, lib, ... }:
 
 {
 	imports =
@@ -7,10 +7,10 @@
 			./xserver.nix
 			./nvidia.nix
 			./bootloader.nix
-			./home-manager.nix
 			./fonts.nix
-			./packages.nix
-			./programs.nix
+			./users/main-user.nix
+			./packages/development.nix
+			./utils.nix
 		];
 	nix.settings.experimental-features = [
 		"nix-command"
@@ -30,8 +30,9 @@
 			utsushi
 			];
 	};
-	users.users.zhonghengl = {
-		shell = pkgs.zsh;
+	main-user = {
+		enable = true;
+		userName = "zhonghengl";
 	};
 
 # rtkit is optional but recommended
@@ -103,13 +104,6 @@
 	services.xserver.displayManager.sddm = {
 		enable = true;
 		theme = "where_is_my_sddm_theme";
-	};
-# Define a user account. Don't forget to set a password with ‘passwd’.
-	users.users.zhonghengl = {
-		isNormalUser = true;
-		description = "Zhongheng Liu";
-		extraGroups = [ "networkmanager" "wheel" ];
-		packages = with pkgs; [];
 	};
 
 	services.openssh.enable = true;

@@ -10,6 +10,7 @@
 			slstatus &
 			fcitx5 &
 			mpris-proxy &
+			udiskie -n &
 			'';
 		};
 		windowManager = {
