@@ -14,5 +14,6 @@
 			];
 		})
 		maven
+		lunarvim
 	];
 }
