@@ -11,7 +11,7 @@
 		# file browser and volume
 		#ranger
 		mc
-		pavucontrol
+		pamixer
 		hello # hello world NixOS test
 		stow # dotfiles configuration
 		fzf # fuzzy finder cli

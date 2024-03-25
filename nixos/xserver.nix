@@ -17,6 +17,7 @@
 				enable = true;
 				package = pkgs.dwm.override {
 					patches = [
+            ./patches/dwm/config-20240325.diff
 						./patches/dwm/dwm-flextile-20210722-138b405.diff
 						./patches/dwm/dwm-systray-6.4.diff
 					];
