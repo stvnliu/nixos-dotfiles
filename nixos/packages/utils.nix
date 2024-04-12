@@ -25,5 +25,8 @@
 		htop
 		bat
 		eza
+
+		trash-cli
+		xclip
 	];
 }

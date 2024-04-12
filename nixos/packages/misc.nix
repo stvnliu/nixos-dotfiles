@@ -8,5 +8,7 @@
 		cmatrix
 
 		android-file-transfer
-	];
+	    qbittorrent
+	    protonvpn-cli
+    ];
 }

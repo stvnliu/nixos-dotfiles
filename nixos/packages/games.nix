@@ -4,5 +4,6 @@
 		prismlauncher
 		lutris
 		heroic
+
 	];
 }

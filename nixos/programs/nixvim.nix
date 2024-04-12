@@ -13,6 +13,14 @@ in
 
 	programs.nixvim = {
 		enable = true;
+		enableMan = true; # enables man pages for nixvim options
+		vimAlias = true;
+		viAlias = true;
+		clipboard.register = "unnamedplus";
+		clipboard.providers = {
+			xclip.enable = true;
+			xsel.enable = true;
+		};
 		options = {
 			number = true;
 			relativenumber = true;
@@ -26,15 +34,15 @@ in
 		};
 		colorschemes.gruvbox.enable = true;
 		plugins = {
-			alpha.enable = true;
+			alpha = {
+				enable = true;
+				iconsEnabled = true;
+			};
 			chadtree.enable = true;
 			telescope.enable = true;
-			oil.enable = true;
 			treesitter.enable = true;
-			luasnip.enable = true;
-			lightline.enable = true;
 			gitsigns.enable = true;
-			barbar.enable = true;
+			airline.enable = true;
 			lsp = {
 				enable = true;
 				servers = {
@@ -43,7 +51,6 @@ in
 					bashls.enable = true;
 					jsonls.enable = true;
 					pylsp.enable = true;
-					
 				};
 			};
 		};

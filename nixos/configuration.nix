@@ -11,6 +11,7 @@
 			./fonts.nix
 			./packages.nix
 			./programs.nix
+			./services/openvpn.nix
 		];
 	nix.settings.experimental-features = [
 		"nix-command"
