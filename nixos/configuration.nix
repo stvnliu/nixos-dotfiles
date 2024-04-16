@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{pkgs, ... }:
 
 {
 	imports =
@@ -18,6 +18,9 @@
 		"flakes"
 	];
 	nixpkgs.config.allowUnfree = true;
+	nixpkgs.config.permittedInsecurePackages = [
+		"electron-25.9.0"
+	];
 	hardware.opengl = {
 		enable = true;
 		driSupport = true;
@@ -29,7 +32,7 @@
 			sane-airscan 
 			#epkowa
 			utsushi
-			];
+		];
 	};
 	users.users.zhonghengl = {
 		shell = pkgs.zsh;
@@ -37,34 +40,35 @@
 
 # rtkit is optional but recommended
 	security.rtkit.enable = true;
-	services.upower.enable = true;
-	services.printing = {
-		enable = true;
-		drivers = [];
+	services = {
+		upower.enable = true;
+		printing = {
+			enable = true;
+			drivers = [];
+		};
+		mysql = {
+			enable = true;
+			package = pkgs.mariadb;
+		};
+		avahi = {
+			enable = true;
+			nssmdns = true;
+			openFirewall = true;
+		};
+		pipewire = {
+			enable = true;
+			alsa.enable = true;
+			alsa.support32Bit = true;
+			pulse.enable = true;
+			#jack.enable = true;
+		};
+		udisks2.enable = true;
 	};
-	services.mysql = {
-		enable = true;
-		package = pkgs.mariadb;
+	networking = {
+		hostName = "nixos"; # Define your hostname.
+		# networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
+		networking.networkmanager.enable = true;
 	};
-	services.avahi = {
-		enable = true;
-		nssmdns = true;
-		openFirewall = true;
-	};
-	services.pipewire = {
-		enable = true;
-		alsa.enable = true;
-		alsa.support32Bit = true;
-		pulse.enable = true;
-		#jack.enable = true;
-	};
-	services.udisks2.enable = true;
-	networking.hostName = "nixos"; # Define your hostname.
-# networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-
-# Enable networking
-	networking.networkmanager.enable = true;
-
 # Set your time zone.
 	time.timeZone = "Europe/Athens";
 
@@ -85,9 +89,9 @@
 	i18n.inputMethod = {
 		enabled = "fcitx5";
 		fcitx5.addons = with pkgs; [ 
-		fcitx5-mozc 
-		fcitx5-gtk
-		fcitx5-rime
+			fcitx5-mozc 
+			fcitx5-gtk
+			fcitx5-rime
 		];
 	};
 	hardware.bluetooth.enable = true;
@@ -110,38 +114,37 @@
 		isNormalUser = true;
 		description = "Zhongheng Liu";
 		extraGroups = [ "networkmanager" "wheel" ];
-		packages = with pkgs; [];
 	};
 
 	services.openssh.enable = true;
 
 # Open ports in the firewall.
-networking.firewall.allowedTCPPorts = [ 80 ];
-networking.firewall.allowedUDPPorts = [ ];
+	networking.firewall.allowedTCPPorts = [ 80 ];
+	networking.firewall.allowedUDPPorts = [ ];
 # Or disable the firewall altogether.
 # networking.firewall.enable = false;
-environment.etc = 
+	environment.etc = 
 #let 
 #	json = pkgs.formats.json {}; 
 #in
-{
-	"wireplumber/bluetooth.lua.d/51-bluez-config.lua".text = ''
-		bluez_monitor.properties = {
-			["bluez5.enable-sbc-xq"] = true,
-			["bluez5.enable-msbc"] = true,
-			["bluez5.enable-hw-volume"] = true,
-			["bluez5.headset-roles"] = "[ hsp_hs hsp_ag hfp_hf hfp_ag ]"
-		}
-	'';
-	#"pipewire/pipewire.d/92-low-latency.conf".source = json.generate "92-low-latency.conf" {
-  	#	context.properties = {
-    	#		default.clock.rate = 48000;
-    	#		default.clock.quantum = 32;
-    	#		default.clock.min-quantum = 32;
-    	#		default.clock.max-quantum = 32;
-  	#	};
-	#};
-};
+	{
+		"wireplumber/bluetooth.lua.d/51-bluez-config.lua".text = ''
+			bluez_monitor.properties = {
+				["bluez5.enable-sbc-xq"] = true,
+				["bluez5.enable-msbc"] = true,
+				["bluez5.enable-hw-volume"] = true,
+				["bluez5.headset-roles"] = "[ hsp_hs hsp_ag hfp_hf hfp_ag ]"
+			}
+		'';
+#"pipewire/pipewire.d/92-low-latency.conf".source = json.generate "92-low-latency.conf" {
+#	context.properties = {
+#		default.clock.rate = 48000;
+#		default.clock.quantum = 32;
+#		default.clock.min-quantum = 32;
+#		default.clock.max-quantum = 32;
+#	};
+#};
+	};
 
 # This value determines the NixOS release from which the default
 # settings for stateful data, like file locations and database versions

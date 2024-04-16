@@ -1,4 +1,4 @@
-{config, pkgs, ...}:
+{pkgs, ...}:
 {
 	imports = [ <home-manager/nixos> ];
 	config = {
@@ -11,6 +11,7 @@
 				userName = "Zhongheng Liu";
 				userEmail = "z.liu@outlook.com.gr";
 				extraConfig = {
+					push.autoSetupRemote = true;
 					commit.gpgsign = true;
 					gpg.format = "ssh";
 					gpg.ssh.allowedSignersFile = "~/.ssh/allowed_signers";
