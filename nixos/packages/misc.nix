@@ -8,7 +8,9 @@
 		cmatrix
 
 		android-file-transfer
-	    qbittorrent
-	    protonvpn-cli
-    ];
+		qbittorrent
+		protonvpn-cli
+
+		auto-cpufreq
+	];
 }

@@ -28,5 +28,7 @@
 
 		trash-cli
 		xclip
+
+		xlockmore
 	];
 }

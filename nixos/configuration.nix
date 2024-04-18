@@ -41,6 +41,7 @@
 # rtkit is optional but recommended
 	security.rtkit.enable = true;
 	services = {
+		auto-cpufreq.enable = true;
 		upower.enable = true;
 		printing = {
 			enable = true;
@@ -67,7 +68,7 @@
 	networking = {
 		hostName = "nixos"; # Define your hostname.
 		# networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-		networking.networkmanager.enable = true;
+		networkmanager.enable = true;
 	};
 # Set your time zone.
 	time.timeZone = "Europe/Athens";
