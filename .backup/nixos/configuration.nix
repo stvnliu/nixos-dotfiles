@@ -7,6 +7,7 @@
 			./xserver.nix
 			./nvidia.nix
 			./bootloader.nix
+			./home-manager.nix
 			./fonts.nix
 			./packages.nix
 			./programs.nix
