@@ -1,6 +1,5 @@
 {pkgs, ...}:
 {
-	imports = [ <home-manager/nixos> ];
 	config = {
 		home-manager.users.zhonghengl = {
 			home.stateVersion = "23.11";
