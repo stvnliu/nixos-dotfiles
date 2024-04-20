@@ -1,9 +1,12 @@
-{pkgs, ...}:
+{config, lib, pkgs, ...}:
+let
+	cfg = config.dwm;
+in
 {
 	options = {
-		
+		dwm.enable = lib.mkEnableOption "Enables dwm.";
 	};
-	config = {
+	config = lib.mkIf cfg.enable {
 		home.packages = with pkgs; [ dmenu slstatus ];
 		services.xserver = {
 			videoDrivers = ["nvidia"]; # or "nvidiaLegacy470 etc.

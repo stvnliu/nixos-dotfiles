@@ -10,7 +10,7 @@ let
   });
 in
 { # home-manager
-  environment.systemPackages = with pkgs; [
+  home.packages = with pkgs; [
     tex
     texstudio
     biber
