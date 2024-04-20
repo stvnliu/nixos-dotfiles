@@ -4,13 +4,7 @@
 	imports =
 		[ # Include the results of the hardware scan.
 			./hardware-configuration.nix
-			./xserver.nix
-			./nvidia.nix
-			./bootloader.nix
-			./fonts.nix
-			./packages.nix
-			./programs.nix
-			./services/openvpn.nix
+			../modules/nixos
 		];
 	nix.settings.experimental-features = [
 		"nix-command"
