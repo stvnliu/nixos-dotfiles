@@ -35,28 +35,6 @@
 	security.rtkit.enable = true;
 	services = {
 		auto-cpufreq.enable = true;
-		upower.enable = true;
-		printing = {
-			enable = true;
-			drivers = [];
-		};
-		mysql = {
-			enable = true;
-			package = pkgs.mariadb;
-		};
-		avahi = {
-			enable = true;
-			nssmdns = true;
-			openFirewall = true;
-		};
-		pipewire = {
-			enable = true;
-			alsa.enable = true;
-			alsa.support32Bit = true;
-			pulse.enable = true;
-			#jack.enable = true;
-		};
-		udisks2.enable = true;
 	};
 	networking = {
 		hostName = "nixos"; # Define your hostname.
@@ -96,9 +74,6 @@
 		layout = "us";
 		xkbVariant = "";
 	};
-	services.picom.enable = true;
-	services.blueman.enable = true;
-	services.gnome.gnome-keyring.enable = true;
 	services.xserver.displayManager.sddm = {
 		enable = true;
 		theme = "where_is_my_sddm_theme";
@@ -109,11 +84,8 @@
 		description = "Zhongheng Liu";
 		extraGroups = [ "networkmanager" "wheel" ];
 	};
-
-	services.openssh.enable = true;
-
 # Open ports in the firewall.
-	networking.firewall.allowedTCPPorts = [ 80 ];
+	networking.firewall.allowedTCPPorts = [ 80 8080 3000 ];
 	networking.firewall.allowedUDPPorts = [ ];
 # Or disable the firewall altogether.
 # networking.firewall.enable = false;
