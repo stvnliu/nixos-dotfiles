@@ -1,6 +1,6 @@
 {config, libs, pkgs, ...}:
 {
-	environment.systemPackages = with pkgs; [
+	home.packages = with pkgs; [
 		
 		# Picture management
 		shotwell
