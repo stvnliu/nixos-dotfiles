@@ -3,4 +3,10 @@
 {
   # List your module files here
   # my-module = import ./my-module.nix;
+  imports = [
+	./grub.nix
+	./nvidia.nix
+	./sddm.nix
+	./services
+  ];
 }

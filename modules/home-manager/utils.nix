@@ -1,6 +1,7 @@
 {config, libs, pkgs, ...}:
 {
 	home.packages = with pkgs; [
+		tree
 		# helpers: wget and lshw
 		wget
 		lshw
