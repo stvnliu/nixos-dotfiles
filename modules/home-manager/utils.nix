@@ -5,7 +5,6 @@
 		# helpers: wget and lshw
 		wget
 		lshw
-
 		# file browser and volume
 		#ranger
 		mc
@@ -13,20 +12,15 @@
 		hello # hello world NixOS test
 		#stow # dotfiles configuration
 		fzf # fuzzy finder cli
-
 		gparted
 		udiskie
 		gimp
-
 		flameshot
-
-		htop
+		btop
 		bat
 		eza
-
 		trash-cli
 		xclip
-
 		xlockmore
 	];
 }

@@ -71,14 +71,13 @@
 # Configure keymap in X11
 	services.xserver = {
 		enable = true;
-		layout = "us";
-		xkbVariant = "";
+		# 24.05 unstable
+		xkb = {
+			layout = "us";
+			variant = "";
+		};
 	};
-	services.xserver.displayManager.sddm = {
-		enable = true;
-		theme = "where_is_my_sddm_theme";
-	};
-# Define a user account. Don't forget to set a password with ‘passwd’.
+	# Define a user account. Don't forget to set a password with ‘passwd’.
 	users.users.zhonghengl = {
 		isNormalUser = true;
 		description = "Zhongheng Liu";
@@ -89,29 +88,16 @@
 	networking.firewall.allowedUDPPorts = [ ];
 # Or disable the firewall altogether.
 # networking.firewall.enable = false;
-	environment.etc = 
-#let 
-#	json = pkgs.formats.json {}; 
-#in
-	{
-		"wireplumber/bluetooth.lua.d/51-bluez-config.lua".text = ''
-			bluez_monitor.properties = {
-				["bluez5.enable-sbc-xq"] = true,
-				["bluez5.enable-msbc"] = true,
-				["bluez5.enable-hw-volume"] = true,
-				["bluez5.headset-roles"] = "[ hsp_hs hsp_ag hfp_hf hfp_ag ]"
-			}
-		'';
-#"pipewire/pipewire.d/92-low-latency.conf".source = json.generate "92-low-latency.conf" {
-#	context.properties = {
-#		default.clock.rate = 48000;
-#		default.clock.quantum = 32;
-#		default.clock.min-quantum = 32;
-#		default.clock.max-quantum = 32;
-#	};
-#};
-	};
-
+services.pipewire.wireplumber.configPackages = [
+	(pkgs.writeTextDir "share/wireplumber/bluetooth.lua.d/51-bluez-config.lua" ''
+		bluez_monitor.properties = {
+			["bluez5.enable-sbc-xq"] = true,
+			["bluez5.enable-msbc"] = true,
+			["bluez5.enable-hw-volume"] = true,
+			["bluez5.headset-roles"] = "[ hsp_hs hsp_ag hfp_hf hfp_ag ]"
+		}
+	'')
+];
 # This value determines the NixOS release from which the default
 # settings for stateful data, like file locations and database versions
 # on your system were taken. It‘s perfectly fine and recommended to leave

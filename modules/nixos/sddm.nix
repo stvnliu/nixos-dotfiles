@@ -1,11 +1,11 @@
-{pkgs, ...}: {
+{pkgs, ...}:
+{
 	environment.systemPackages = with pkgs; [
-		(where-is-my-sddm-theme.override {
-		 	themeConfig.General = {
-		 	background = "./login.jpg";
-		 	backgroundMode = "fill";
-		 	};
-		 }
-		)
+	libsForQt5.qt5.qtquickcontrols2
+	libsForQt5.qt5.qtgraphicaleffects
 	];
+	services.displayManager.sddm = {
+		enable = true;
+		theme = "${import ./sddm-theme.nix { inherit pkgs; }}";
+	};
 }

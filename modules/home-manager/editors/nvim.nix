@@ -1,10 +1,6 @@
 {lib, config, pkgs, ...}:
 let
 	cfg = config.nvim;
-	nixvim = import (builtins.fetchGit {
-		url = "https://github.com/nix-community/nixvim";
-		ref = "nixos-23.11";
-		});
 in
 {
 	options = {
@@ -24,8 +20,12 @@ in
 				number = true;
 				relativenumber = true;
 				shiftwidth = 8;
+				completeopt = [ "menu" "menuone" "noselect" ];
+				autoindent = true;
+				undofile = true;
 			};
 			extraPlugins = with pkgs.vimPlugins; [
+				nvim-web-devicons
 				gruvbox
 			];
 			highlight = {
@@ -36,6 +36,11 @@ in
 				alpha = {
 					enable = true;
 					iconsEnabled = true;
+					theme = "dashboard";
+				};
+				luasnip.enable = true;
+				cmp = {
+					enable = true;
 				};
 				chadtree.enable = true;
 				telescope.enable = true;
@@ -51,6 +56,8 @@ in
 						bashls.enable = true;
 						jsonls.enable = true;
 						pylsp.enable = true;
+						cssls.enable = true;
+						java-language-server.enable = true;
 					};
 				};
 			};
