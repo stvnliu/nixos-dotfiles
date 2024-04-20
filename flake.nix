@@ -19,6 +19,8 @@
     # Shameless plug: looking for a way to nixify your themes and make
     # everything match nicely? Try nix-colors!
     # nix-colors.url = "github:misterio77/nix-colors";
+    nixvim.url = "github:nix-community/nixvim/nixos-23.11";
+    nixvim.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs = {
@@ -79,6 +81,7 @@
         modules = [
           # > Our main home-manager configuration file <
           ./home-manager/home.nix
+          inputs.nixvim.homeManagerModules.nixvim
         ];
       };
     };

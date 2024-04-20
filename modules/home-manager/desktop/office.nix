@@ -9,7 +9,5 @@
 
 		# PDFs
 		libsForQt5.okular
-
-		obsidian
 	];
 }

@@ -30,7 +30,7 @@
 	users.users.zhonghengl = {
 		shell = pkgs.zsh;
 	};
-
+	programs.zsh.enable = true;
 # rtkit is optional but recommended
 	security.rtkit.enable = true;
 	services = {

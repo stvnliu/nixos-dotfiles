@@ -9,7 +9,7 @@
 			update = "sudo nixos-rebuild switch";
 			batmon = "watch -n0 upower -i /org/freedesktop/UPower/devices/battery_BAT1";
 		};
-		ohMyZsh = {
+		oh-my-zsh = {
 			enable = true;
 			plugins = ["git"];
 			theme = "agnoster";

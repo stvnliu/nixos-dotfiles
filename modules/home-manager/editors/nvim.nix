@@ -11,10 +11,6 @@ in
 		nvim.enable = lib.mkEnableOption "Enables neovim with nixvim support.";
 	};
 	config = lib.mkIf cfg.enable {
-		home.packages = [ pkgs.neovim ];
-		imports = [
-			nixvim.nixosModules.nixvim
-		];
 		programs.nixvim = {
 			enable = true;
 			enableMan = true; # enables man pages for nixvim options

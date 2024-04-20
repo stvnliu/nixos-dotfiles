@@ -9,9 +9,8 @@
 		./grub.nix
 		./nvidia.nix
 		./sddm.nix
+		./steam.nix
 		./services
-	];
-	environment.systemPackages = with pkgs; [
-		home-manager
+		./wm
 	];
 }

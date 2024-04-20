@@ -7,7 +7,7 @@ in
 		dwm.enable = lib.mkEnableOption "Enables dwm.";
 	};
 	config = lib.mkIf cfg.enable {
-		home.packages = with pkgs; [ dmenu slstatus ];
+		environment.systemPackages = with pkgs; [ dmenu slstatus ];
 		services.xserver = {
 			videoDrivers = ["nvidia"]; # or "nvidiaLegacy470 etc.
 			displayManager = {
