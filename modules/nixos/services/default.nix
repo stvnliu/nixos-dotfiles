@@ -7,5 +7,6 @@
 		./openvpn.nix
 		./pipewire.nix
 		./printing.nix
+		./static-web-server.nix
 	];
 }

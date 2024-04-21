@@ -4,7 +4,7 @@
 	imports =
 		[ # Include the results of the hardware scan.
 			./hardware-configuration.nix
-			../modules/nixos
+			../../modules/nixos
 		];
 	nix.settings.experimental-features = [
 		"nix-command"
@@ -37,7 +37,7 @@
 		auto-cpufreq.enable = true;
 	};
 	networking = {
-		hostName = "nixos"; # Define your hostname.
+		hostName = "nixos-default"; # Define your hostname.
 		# networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 		networkmanager.enable = true;
 	};
@@ -84,7 +84,7 @@
 		extraGroups = [ "networkmanager" "wheel" ];
 	};
 # Open ports in the firewall.
-	networking.firewall.allowedTCPPorts = [ 8080 3000 ];
+	networking.firewall.allowedTCPPorts = [ 80 8080 3000 ];
 	networking.firewall.allowedUDPPorts = [ ];
 # Or disable the firewall altogether.
 # networking.firewall.enable = false;
