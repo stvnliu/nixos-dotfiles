@@ -9,6 +9,7 @@
 		./grub.nix
 		./nvidia.nix
 		./sddm.nix
+		./utils.nix
 		./steam.nix
 		./services
 		./wm

@@ -1,5 +1,5 @@
 diff --git a/config.def.h b/config.def.h
-index 9efa774..76e1671 100644
+index 9efa774..1b543e3 100644
 --- a/config.def.h
 +++ b/config.def.h
 @@ -1,21 +1,22 @@
@@ -32,30 +32,29 @@ index 9efa774..76e1671 100644
  };
  
  /* tagging */
-@@ -59,11 +60,25 @@ static const Layout layouts[] = {
+@@ -59,11 +60,24 @@ static const Layout layouts[] = {
  static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
  static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
  static const char *termcmd[]  = { "st", NULL };
 -
-+static const char *lockcmd[] = { "xlock", NULL };
++static const char *lockcmd[] = { "xlock" , "-mode", "space", NULL };
 +static const char *mccmd[]    =   { "st", "-e", "mc", NULL };
 +static const char *raisevol[] =   { "pamixer", "-i", "5", NULL};
 +static const char *lowervol[] =   { "pamixer", "-d", "5", NULL};
 +static const char *mutevol[]  =   {"pamixer", "--set-volume", "0", NULL};
 +static const char *screenshot[] = {"flameshot", "gui", NULL};
++static const char *btop[] = {"btop", NULL};
  static const Key keys[] = {
  	/* modifier                     key        function        argument */
 +	{0,                             XF86XK_AudioRaiseVolume, spawn, {.v = raisevol } },
 +	{0,                             XF86XK_AudioLowerVolume, spawn, {.v = lowervol } },
 +	{0,                             XF86XK_AudioMute, spawn,   {.v = mutevol } },
 +	{0,                             XK_Print,  spawn,          {.v = screenshot } },
-+	
 +	{ MODKEY,                       XK_e,      spawn,          {.v = mccmd } },
  	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
  	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
-+
++	{ MODKEY|ControlMask,		XK_m,      spawn,          {.v = btop } },
 +	{MODKEY|ControlMask,		XK_l, spawn, {.v = lockcmd } },
-+	
  	{ MODKEY,                       XK_b,      togglebar,      {0} },
  	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
  	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
