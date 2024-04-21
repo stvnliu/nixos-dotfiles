@@ -5,7 +5,6 @@
 		[ # Include the results of the hardware scan.
 			./hardware-configuration.nix
 			../modules/nixos
-			inputs.sops-nix.nixosModules.sops
 		];
 	nix.settings.experimental-features = [
 		"nix-command"
@@ -28,10 +27,6 @@
 			utsushi
 		];
 	};
-	sops.defaultSopsFile = ./secrets/secrets.yaml;
-	sops.defaultSopsFormat = "yaml";
-	sops.age.keyFile = "/home/zhonghengl/.config/sops/age/keys.txt";
-	sops.secrets.my-secret = { };
 	users.users.zhonghengl = {
 		shell = pkgs.zsh;
 	};
