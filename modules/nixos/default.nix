@@ -11,6 +11,8 @@
 		./sddm.nix
 		./utils.nix
 		./steam.nix
+		./i18n.nix
+		./x.nix
 		./services
 		./wm
 	];
