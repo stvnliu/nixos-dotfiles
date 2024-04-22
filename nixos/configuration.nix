@@ -83,21 +83,38 @@
 		description = "Zhongheng Liu";
 		extraGroups = [ "networkmanager" "wheel" ];
 	};
+	specialisation.test = {
+		inheritParentConfig = true;
+		configuration = {
+			system.nixos.tags = [ "test" ];
+			environment.variables = {
+				SPECIALISATIONS_TEST = "ENABLED";
+			};
+		};
+	};
 # Open ports in the firewall.
 	networking.firewall.allowedTCPPorts = [ 8080 3000 ];
 	networking.firewall.allowedUDPPorts = [ ];
 # Or disable the firewall altogether.
 # networking.firewall.enable = false;
-services.pipewire.wireplumber.configPackages = [
-	(pkgs.writeTextDir "share/wireplumber/bluetooth.lua.d/51-bluez-config.lua" ''
-		bluez_monitor.properties = {
-			["bluez5.enable-sbc-xq"] = true,
-			["bluez5.enable-msbc"] = true,
-			["bluez5.enable-hw-volume"] = true,
-			["bluez5.headset-roles"] = "[ hsp_hs hsp_ag hfp_hf hfp_ag ]"
-		}
-	'')
-];
+	services.pipewire.wireplumber.configPackages = [
+		(pkgs.writeTextDir "share/wireplumber/bluetooth.lua.d/51-bluez-config.lua" ''
+			bluez_monitor.properties = {
+				["bluez5.enable-sbc-xq"] = true,
+				["bluez5.enable-msbc"] = true,
+				["bluez5.enable-hw-volume"] = true,
+				["bluez5.headset-roles"] = "[ hsp_hs hsp_ag hfp_hf hfp_ag ]"
+			}
+		'')
+	];
+	environment = {
+		systemPackages = with pkgs; [ sublime ];
+		variables = {
+			FLAKE = "/home/${config.users.users.zhonghengl.name}/dotfiles";
+			EDITOR = "nvim";
+			VISUAL = "sublime";
+		};
+	};
 # This value determines the NixOS release from which the default
 # settings for stateful data, like file locations and database versions
 # on your system were taken. It‘s perfectly fine and recommended to leave
