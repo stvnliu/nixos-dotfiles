@@ -4,6 +4,7 @@
 		prismlauncher
 		lutris
 		heroic
-
+		torcs
+		flightgear
 	];
 }
