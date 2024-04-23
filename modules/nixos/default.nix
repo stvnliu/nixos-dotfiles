@@ -13,6 +13,7 @@
 		./steam.nix
 		./i18n.nix
 		./x.nix
+		./nix-ld.nix
 		./services
 		./wm
 	];

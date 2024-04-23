@@ -9,6 +9,7 @@
 		./tex.nix
 		./utils.nix
 		./zsh.nix
+		./gtk.nix
 		./desktop
 		./editors
 		./terminals

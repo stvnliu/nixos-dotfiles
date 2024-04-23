@@ -6,6 +6,7 @@
 			./hardware-configuration.nix
 			../modules/nixos
 			./specialisations
+			../overlays/test-overlay.nix
 		];
 	nix.settings.experimental-features = [
 		"nix-command"
