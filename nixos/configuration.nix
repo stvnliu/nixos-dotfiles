@@ -62,8 +62,11 @@
 	networking.firewall.allowedUDPPorts = [ ];
 # Or disable the firewall altogether.
 # networking.firewall.enable = false;
-		environment = {
-		systemPackages = with pkgs; [ sublime ];
+	environment = {
+		systemPackages = with pkgs; [
+			sublime
+			devenv
+		];
 		variables = {
 			FLAKE = "/home/${config.users.users.zhonghengl.name}/dotfiles";
 			EDITOR = "nvim";
