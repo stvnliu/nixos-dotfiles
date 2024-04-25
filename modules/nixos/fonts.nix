@@ -8,12 +8,16 @@
 		mplus-outline-fonts.githubRelease
 		dina-font
 		proggyfonts
+		glasstty-ttf
 		(
 			nerdfonts.override {
 				fonts = [
 					"FiraCode"
 					"IBMPlexMono"
 					"IntelOneMono"
+					"CascadiaMono"
+					"CommitMono"
+					"JetBrainsMono"
 				];
 			} 
 		)
