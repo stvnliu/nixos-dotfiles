@@ -9,5 +9,7 @@
 
 		# PDFs
 		libsForQt5.okular
+
+		pcmanfm
 	];
 }

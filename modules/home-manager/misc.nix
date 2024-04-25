@@ -12,5 +12,6 @@
 		protonvpn-cli
 
 		auto-cpufreq
+		lxappearance
 	];
 }

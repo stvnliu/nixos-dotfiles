@@ -14,6 +14,5 @@
 		
 		# Local and spotify-based cloud music
 		rhythmbox
-		spotifywm
 	];
 }

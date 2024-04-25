@@ -11,6 +11,7 @@
 			inputs.nixpkgs.follows = "nixpkgs";
 		};
 		sops-nix.url = "github:Mic92/sops-nix";
+		spicetify-nix.url = "github:the-argus/spicetify-nix";
 	};
 	outputs = {
 		self,
@@ -57,6 +58,7 @@
 				modules = [
 					./home-manager/home.nix
 					inputs.nixvim.homeManagerModules.nixvim
+					inputs.spicetify-nix.homeManagerModule
 				];
 			};
 		};
