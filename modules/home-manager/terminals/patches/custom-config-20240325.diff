@@ -1,5 +1,5 @@
 diff --git a/config.def.h b/config.def.h
-index 2cd740a..54454f9 100644
+index 2cd740a..917a515 100644
 --- a/config.def.h
 +++ b/config.def.h
 @@ -5,7 +5,7 @@
@@ -7,7 +7,7 @@ index 2cd740a..54454f9 100644
   * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
   */
 -static char *font = "Liberation Mono:pixelsize=12:antialias=true:autohint=true";
-+static char *font = "IntoneMonoNerdFont:pixelsize=12:antialias=true:autohint=true";
++static char *font = "CaskaydiaMono NFM:pixelsize=12:antialias=true:autohint=true";
  static int borderpx = 2;
  
  /*
