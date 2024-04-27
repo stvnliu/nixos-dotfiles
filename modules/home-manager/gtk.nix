@@ -8,26 +8,25 @@
 			size = 24;
 		};
 		font = {
-			package = pkgs.dejavu_fonts;
-			name = "Dejavu Serif";
-			size = 12;
-		};
-		iconTheme = {
-			package = pkgs.libsForQt5.breeze-icons;
-			name = "Breeze";
+			name = "CaskaydiaMono Nerd Font ExtraLight";
+			size = 10;
 		};
 		theme = {
-			package = pkgs.libsForQt5.breeze-gtk;
-			name = "Breeze";
+			package = pkgs.kanagawa-gtk-theme;
+			name = "Kanagawa-B";
+		};
+		iconTheme = {
+			package = pkgs.kanagawa-icon-theme;
+			name = "Kanagawa";
 		};
 	};
 	qt = {
 		enable = true;
-		platformTheme = "qtct";
-		# style = {
-		#   package = pkgs.libsForQt5.breeze-qt5;
-		#   name = "breeze";
-		# };
+		platformTheme = "gtk";
+		style = {
+		   package = pkgs.libsForQt5.breeze-qt5;
+		   name = "breeze";
+		};
 	};
 	home.packages = with pkgs; [
 		libsForQt5.breeze-qt5
