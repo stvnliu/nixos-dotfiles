@@ -11,5 +11,7 @@
 		libsForQt5.okular
 
 		pcmanfm
+
+		paperwork
 	];
 }
