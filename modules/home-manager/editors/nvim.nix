@@ -39,9 +39,7 @@ in
 					theme = "dashboard";
 				};
 				luasnip.enable = true;
-				cmp = {
-					enable = true;
-				};
+				coq-nvim.enable = true;
 				chadtree.enable = true;
 				telescope.enable = true;
 				treesitter.enable = true;
