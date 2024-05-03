@@ -6,5 +6,6 @@
 		./multimedia.nix
 		./notify.nix
 		./office.nix
+		./wechat
 	];
 }
