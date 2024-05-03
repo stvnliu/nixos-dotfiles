@@ -67,7 +67,6 @@
 	environment = {
 		systemPackages = with pkgs; [
 			devenv
-			wechat-uos.override { uosLicense = ./license.tar.gz; }
 		];
 		variables = {
 			FLAKE = "/home/${config.users.users.zhonghengl.name}/dotfiles";
