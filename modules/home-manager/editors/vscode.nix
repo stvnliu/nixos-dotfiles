@@ -7,17 +7,9 @@ in
 		vscode.enable = lib.mkEnableOption "Enables vscode support with extensions";
 	};
 	config = lib.mkIf cfg.enable {
-		home.packages = with pkgs; [
-			(vscode-with-extensions.override {
-				vscodeExtensions = with vscode-extensions; [
-					bbenoist.nix
-					ms-python.python
-					ms-vscode-remote.remote-ssh
-					vscodevim.vim
-					redhat.java
-					vscjava.vscode-spring-initializr
-				];
-			})
-		];
+		programs.vscode = {
+			enable = true;
+			package = pkgs.vscode.fhs;
+		};
 	};
 }

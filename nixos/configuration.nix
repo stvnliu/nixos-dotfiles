@@ -15,6 +15,7 @@
 	nixpkgs.config.allowUnfree = true;
 	nixpkgs.config.permittedInsecurePackages = [
 		"electron-25.9.0"
+		"openssl-1.1.1w"
 	];
 	hardware.opengl = {
 		enable = true;
@@ -65,13 +66,12 @@
 # networking.firewall.enable = false;
 	environment = {
 		systemPackages = with pkgs; [
-			sublime
 			devenv
+			wechat-uos.override { uosLicense = ./license.tar.gz; }
 		];
 		variables = {
 			FLAKE = "/home/${config.users.users.zhonghengl.name}/dotfiles";
 			EDITOR = "nvim";
-			VISUAL = "sublime";
 		};
 	};
 # This value determines the NixOS release from which the default

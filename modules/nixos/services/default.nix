@@ -8,6 +8,6 @@
 		./pipewire.nix
 		./printing.nix
 		./static-web-server.nix
-		#./epq-chat.nix
+		./ferretdb.nix
 	];
 }
