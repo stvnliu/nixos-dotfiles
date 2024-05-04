@@ -8,13 +8,15 @@ with lib;
 		shell.prompts.starship.enable = mkEnableOption "Enables starship prompts.";
 		shell.prompts.starship.confPath = mkOption {
 			type = types.path;
-			default = ./custom-starship.toml;
+			default = ./presets/default.toml;
 		};
 	};
-	programs.starship = {
-		enable = true;
-		enableZshIntegration = true;
-		settings = builtins.fromTOML (builtins.readFile cfg.confPath);
+	config = {
+		programs.starship = {
+			enable = true;
+			enableZshIntegration = true;
+			settings = builtins.fromTOML (builtins.readFile cfg.confPath);
+		};
 	};
 }
 
