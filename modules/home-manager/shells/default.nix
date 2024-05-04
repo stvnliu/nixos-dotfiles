@@ -18,7 +18,7 @@ with lib;
 	config = mkIf cfg.enable {
 		shell = {
 			zsh.enable = cfg.useZsh;
-			prompt.starship.enable = true;
+			prompts.starship.enable = true;
 		};
 	};
 }

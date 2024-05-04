@@ -1,5 +1,5 @@
 { pkgs }: {
-	ls = "${pkgs.exa}/bin/exa";
+	ls = "${pkgs.eza}/bin/exa";
 	cat = "${pkgs.bat}/bin/bat";
 	ll = "ls -l";
 	osupdate = "${pkgs.nh}/bin/nh os switch";

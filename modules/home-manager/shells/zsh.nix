@@ -11,7 +11,7 @@ with lib;
 		programs.zsh = {
 			enable = true;
 			syntaxHighlighting.enable = true;
-			shellAliases = import ./aliases;
+			shellAliases = import ./aliases {inherit pkgs;};
 			dirHashes = {
 				docs = "$HOME/Documents";
 				dl = "$HOME/Downloads";
