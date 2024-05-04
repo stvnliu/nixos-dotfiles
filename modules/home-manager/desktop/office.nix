@@ -6,6 +6,7 @@
 
 		# Office suite for documents
 		libreoffice
+		obsidian
 
 		# PDFs
 		libsForQt5.okular
