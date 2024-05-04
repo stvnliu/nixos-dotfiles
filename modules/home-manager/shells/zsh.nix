@@ -1,17 +1,17 @@
-{pkgs, config, ...}:
+{pkgs, lib, config, ...}:
+let
+	cfg = config.shell.zsh;
+in
+with lib;
 {
+	options.shell.zsh = {
+		enable = mkEnableOption "Enables zsh and components.";
+	};
 	config = {
 		programs.zsh = {
 			enable = true;
 			syntaxHighlighting.enable = true;
-			shellAliases = {
-				ls = "exa";
-				cat = "bat";
-				ll = "ls -l";
-				osupdate = "nh os switch";
-				homeupdate = "nh home switch -- --impure";
-				batmon = "watch -n0 upower -i /org/freedesktop/UPower/devices/battery_BAT1";
-			};
+			shellAliases = import ./aliases;
 			dirHashes = {
 				docs = "$HOME/Documents";
 				dl = "$HOME/Downloads";
