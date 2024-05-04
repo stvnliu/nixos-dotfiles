@@ -1,9 +1,7 @@
-{...}:
+{lib, pkgs, config, ...}:
 {
 	imports = [ 
-		./nvim.nix 
+		./neovim.nix 
 		./vscode.nix 
 	];
-	nvim.enable = true;
-	vscode.enable = true;
 }

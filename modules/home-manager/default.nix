@@ -15,4 +15,10 @@
 		./terminals
 		#./wm
 	];
+	config = {
+		editors = {
+			neovim.enable = true;
+			vscode.enable = true;
+		};
+	};
 }

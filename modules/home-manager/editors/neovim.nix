@@ -1,10 +1,10 @@
 {lib, config, pkgs, ...}:
 let
-	cfg = config.nvim;
+	cfg = config.editors.neovim;
 in
 {
-	options = {
-		nvim.enable = lib.mkEnableOption "Enables neovim with nixvim support.";
+	options.editors = {
+		neovim.enable = lib.mkEnableOption "Enables neovim with nixvim support.";
 	};
 	config = lib.mkIf cfg.enable {
 		programs.nixvim = {

@@ -1,9 +1,9 @@
 {lib, pkgs, config, ...}:
 let
-	cfg = config.vscode;
+	cfg = config.editors.vscode;
 in
 {
-	options = {
+	options.editors = {
 		vscode.enable = lib.mkEnableOption "Enables vscode support with extensions";
 	};
 	config = lib.mkIf cfg.enable {
