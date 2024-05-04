@@ -12,11 +12,13 @@
 		"nix-command"
 		"flakes"
 	];
-	nixpkgs.config.allowUnfree = true;
-	nixpkgs.config.permittedInsecurePackages = [
-		"electron-25.9.0"
-		"openssl-1.1.1w"
-	];
+	nixpkgs.config = {
+		allowUnfree = true;
+		permittedInsecurePackages = [
+			"electron-25.9.0"
+			"openssl-1.1.1w"
+		];
+	};
 	hardware.opengl = {
 		enable = true;
 		driSupport = true;
