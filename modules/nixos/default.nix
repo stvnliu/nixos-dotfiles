@@ -12,7 +12,7 @@
 		./utils.nix
 		./steam.nix
 		./i18n.nix
-		./x.nix
+		./xorg.nix
 		./nix-ld.nix
 		./services
 		./wm
