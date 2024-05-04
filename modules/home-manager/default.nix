@@ -13,6 +13,7 @@
 		./desktop
 		./editors
 		./terminals
+		./shells
 		#./wm
 	];
 	config = {
