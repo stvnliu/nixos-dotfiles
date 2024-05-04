@@ -4,11 +4,11 @@
 		./development.nix
 		./jdk.nix
 		./misc.nix
-		#./nix-ld.nix
-		#./steam.nix
+		# ./nix-ld.nix
+		# ./steam.nix
 		./tex.nix
 		./utils.nix
-		./zsh.nix
+		# ./zsh.nix
 		./gtk.nix
 		./desktop
 		./editors
@@ -19,6 +19,10 @@
 		editors = {
 			neovim.enable = true;
 			vscode.enable = true;
+		};
+		shells = {
+			enable = true;
+			useZsh = true;
 		};
 	};
 }
