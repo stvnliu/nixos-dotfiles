@@ -1,6 +1,11 @@
 {pkgs, ...}:
 {
 	fonts.packages = with pkgs; [
+		helvetica-neue-lt-std
+		aileron
+		corefonts
+		vistafonts
+		vistafonts-chs
 		noto-fonts
 		noto-fonts-cjk
 		noto-fonts-emoji
