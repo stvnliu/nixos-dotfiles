@@ -41,8 +41,8 @@
 
 # Your custom packages and modifications, exported as overlays
 		overlays = import ./overlays {inherit inputs;};
-		#nixosModules = import ./modules/nixos;
-		#homeManagerModules = import ./modules/home-manager;
+		nixosModules = import ./modules/nixos;
+		homeManagerModules = import ./modules/home-manager;
 		nixosConfigurations = {
 			nixos = nixpkgs.lib.nixosSystem {
 				specialArgs = {inherit inputs outputs;};
