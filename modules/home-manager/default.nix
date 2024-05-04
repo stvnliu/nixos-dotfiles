@@ -10,6 +10,7 @@
 		./utils.nix
 		# ./zsh.nix
 		./gtk.nix
+		./spicetify.nix
 		./desktop
 		./editors
 		./terminals

@@ -10,8 +10,6 @@
 }: {
 # You can import other home-manager modules here
 	imports = [
-		../modules/home-manager
-		./spicetify.nix
 # If you want to use modules your own flake exports (from modules/home-manager):
 # outputs.homeManagerModules.example
 
@@ -54,7 +52,7 @@
 		homeDirectory = "/home/zhonghengl";
 	};
 	home.file.".ssh/allowed_signers".text =
-		"* ${builtins.readFile /home/zhonghengl/.ssh/id_ed25519.pub}";
+		"* ${builtins.readFile ./zhonghengl_ed25519.pub}";
 	programs.git = {
 		enable = true;
 		userName = "Zhongheng Liu";
@@ -64,7 +62,7 @@
 			commit.gpgsign = true;
 			gpg.format = "ssh";
 			gpg.ssh.allowedSignersFile = "~/.ssh/allowed_signers";
-			user.signingkey = "~/.ssh/id_ed25519.pub";
+			user.signingkey = ./zhonghengl_ed25519.pub;
 			credential.helper = "${
 				pkgs.git.override { withLibsecret = true; }
 			}/bin/git-credential-libsecret";

@@ -48,6 +48,7 @@
 				specialArgs = {inherit inputs outputs;};
 				modules = [
 					./nixos/configuration.nix
+					./modules/nixos
 				];
 			};
 		};
@@ -57,6 +58,7 @@
 					extraSpecialArgs = {inherit inputs outputs;};
 				modules = [
 					./home-manager/home.nix
+					./modules/home-manager
 					inputs.nixvim.homeManagerModules.nixvim
 					inputs.spicetify-nix.homeManagerModule
 				];
