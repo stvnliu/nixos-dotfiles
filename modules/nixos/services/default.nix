@@ -8,6 +8,7 @@
 		./pipewire.nix
 		./printing.nix
 		./static-web-server.nix
+		./nginx.nix
 		./ferretdb.nix
 	];
 }
