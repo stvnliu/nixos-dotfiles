@@ -9,7 +9,8 @@
 		root = "/srv/public";
 		configuration = {
 			general = {
-				directory-listing = true;
+				directory-listing = false;
+				#directory-listing = true;
 			};
 		};
 	};
