@@ -10,6 +10,6 @@
 		torcs
 		flightgear
 		openttd
-		openttd-jgrpp
+		#openttd-jgrpp
 	];
 }

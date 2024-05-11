@@ -55,6 +55,7 @@
 		"* ${builtins.readFile ./zhonghengl_ed25519.pub}";
 	programs.git = {
 		enable = true;
+		package = pkgs.gitFull;
 		userName = "Zhongheng Liu";
 		userEmail = "z.liu@outlook.com.gr";
 		extraConfig = {
@@ -63,9 +64,7 @@
 			gpg.format = "ssh";
 			gpg.ssh.allowedSignersFile = "~/.ssh/allowed_signers";
 			user.signingkey = "~/.ssh/id_ed25519.pub";
-			credential.helper = "${
-				pkgs.git.override { withLibsecret = true; }
-			}/bin/git-credential-libsecret";
+			credential.helper = "libsecret";
 		};
 	};
 # Add stuff for your user as you see fit:
