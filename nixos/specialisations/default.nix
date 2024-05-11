@@ -1,7 +1,7 @@
 {...}:
 {
 	imports = [
-		./test.nix
+		#./test.nix
 		./powersave.nix
 	];
 }
