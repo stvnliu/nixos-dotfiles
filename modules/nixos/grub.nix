@@ -40,6 +40,10 @@ in
 	#	fsType = "ntfs-3g";
 	#	options = [ "rw" "uid=1000" ];
 	#};
+	#boot.plymouth = {
+	#	enable = true;
+	#	theme = "breeze";
+	#};
 	boot.loader = {
 		efi = {
 			canTouchEfiVariables = true;

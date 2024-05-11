@@ -3,6 +3,7 @@
 	services.xserver = {
 		enable = true;
 		# 24.05 unstable
+		dpi = 144;
 		videoDrivers = ["nvidia"]; # or "nvidiaLegacy470 etc.
 		displayManager = {
 			sessionCommands = ''
