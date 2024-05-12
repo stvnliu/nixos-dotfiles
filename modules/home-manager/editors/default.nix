@@ -1,7 +1,11 @@
-{lib, pkgs, config, ...}:
 {
-	imports = [ 
-		./neovim.nix 
-		./vscode.nix 
-	];
+  lib,
+  pkgs,
+  config,
+  ...
+}: {
+  imports = [
+    ./neovim.nix
+    ./vscode.nix
+  ];
 }
