@@ -19,11 +19,13 @@ in {
       clipboard.providers = {
         xclip.enable = true;
       };
-      options = {
+      opts = {
         number = true;
         relativenumber = true;
-        shiftwidth = 8;
+        shiftwidth = 2;
+        tabstop = 2;
         completeopt = ["menu" "menuone" "noselect"];
+        expandtab = true;
         autoindent = true;
         undofile = true;
       };
