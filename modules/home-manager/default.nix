@@ -1,6 +1,6 @@
 {lib, ...}: {
   imports = [
-    ./development.nix
+    #./development.nix
     ./jdk.nix
     ./misc.nix
     # ./nix-ld.nix
