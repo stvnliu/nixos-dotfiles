@@ -7,7 +7,7 @@
 }: {
   # https://devenv.sh/basics/
   env.GREET = "devenv";
-
+  cachix.enable = false;
   # https://devenv.sh/packages/
   packages = [pkgs.git];
 
