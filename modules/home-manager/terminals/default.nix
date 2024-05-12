@@ -1,7 +1,11 @@
-{lib, pkgs, config, ...}:
 {
-	imports = [
-		./st.nix
-	];
-	st.enable = true;
+  lib,
+  pkgs,
+  config,
+  ...
+}: {
+  imports = [
+    ./st.nix
+  ];
+  st.enable = true;
 }

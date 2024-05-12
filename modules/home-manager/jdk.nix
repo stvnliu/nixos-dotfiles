@@ -1,7 +1,11 @@
-{config, lib, pkgs, ...}:
 {
-    programs.java = {
-        enable = true;
-        package = pkgs.jdk17;
-    };
+  config,
+  lib,
+  pkgs,
+  ...
+}: {
+  programs.java = {
+    enable = true;
+    package = pkgs.jdk17;
+  };
 }

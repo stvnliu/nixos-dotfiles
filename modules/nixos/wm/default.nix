@@ -1,4 +1,4 @@
 {lib, ...}: {
-	imports = [ ./dwm/default.nix ];
-	dwm.enable = lib.mkDefault true;
+  imports = [./dwm/default.nix];
+  dwm.enable = lib.mkDefault true;
 }

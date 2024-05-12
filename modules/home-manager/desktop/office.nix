@@ -1,18 +1,22 @@
-{config, libs, pkgs, ...}:
 {
-	home.packages = with pkgs; [
-		firefox
-		thunderbird
+  config,
+  libs,
+  pkgs,
+  ...
+}: {
+  home.packages = with pkgs; [
+    firefox
+    thunderbird
 
-		# Office suite for documents
-		libreoffice
-		obsidian
+    # Office suite for documents
+    libreoffice
+    obsidian
 
-		# PDFs
-		libsForQt5.okular
+    # PDFs
+    libsForQt5.okular
 
-		pcmanfm
+    pcmanfm
 
-		paperwork
-	];
+    paperwork
+  ];
 }
