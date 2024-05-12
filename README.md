@@ -13,4 +13,6 @@ home-manager switch --flake ".#username@hostname" --impure
 ### Specialisations
 The configuration is, to the maximum of its ability, modular. By default, it comes with the following specialisations:
 - Default: The default configuration
-- `test`: 
+- `powersave`: The power-saving configuration including alternative nvidia offload mode and disabling database integrations.
+## Contributing
+This project integrates devenv.sh through `devenv.nix`. When contributing code, comply to commitizen commitlint format. For more guidelines, refer to `CONTRIBUTING.md`.
