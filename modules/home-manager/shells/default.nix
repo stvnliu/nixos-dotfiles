@@ -9,6 +9,7 @@ in
   with lib; {
     imports = [
       ./zsh.nix
+      ./direnv.nix
       ./starship
     ];
     options.shells = {
