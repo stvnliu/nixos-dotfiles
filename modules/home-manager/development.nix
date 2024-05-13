@@ -1,12 +1,7 @@
-{
-  config,
-  libs,
-  pkgs,
-  ...
-}: {
+{pkgs, ...}: {
   home.packages = with pkgs; [
-    nodejs
-    python3
-    maven
+    #nodejs
+    #python3
+    #maven
   ];
 }

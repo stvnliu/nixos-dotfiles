@@ -18,9 +18,11 @@
     ./which_key.nix
     ./wilder.nix
   ];
-
+  enable = true;
   globals.mapleader = " ";
-
+  colorschemes.kanagawa = {
+    enable = true;
+  };
   keymaps = [
     # Global
     # Default mode is "" which means normal-visual-op
