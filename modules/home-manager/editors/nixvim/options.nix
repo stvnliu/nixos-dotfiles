@@ -1,12 +1,23 @@
-{...}: {
-  programs.nixvim.opts = {
+{
+  config.opts = {
+    updatetime = 100; # Faster completion
+
     number = true;
     relativenumber = true;
-    shiftwidth = 2;
-    tabstop = 2;
-    completeopt = ["menu" "menuone" "noselect"];
-    expandtab = true;
+
     autoindent = true;
-    undofile = true;
+    clipboard = "unnamedplus";
+    expandtab = true;
+    shiftwidth = 2;
+    smartindent = true;
+    tabstop = 2;
+
+    ignorecase = true;
+    incsearch = true;
+    smartcase = true;
+    wildmode = "list:longest";
+
+    swapfile = false;
+    undofile = true; # Build-in persistent undo
   };
 }
