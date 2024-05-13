@@ -40,10 +40,7 @@ in {
   #	fsType = "ntfs-3g";
   #	options = [ "rw" "uid=1000" ];
   #};
-  #boot.plymouth = {
-  #	enable = true;
-  #	theme = "breeze";
-  #};
+  boot.kernelParams = ["quiet"];
   boot.loader = {
     efi = {
       canTouchEfiVariables = true;
@@ -55,8 +52,6 @@ in {
       device = "nodev";
       useOSProber = true;
       configurationLimit = 10;
-      #font = "${pkgs.hack-font}/share/fonts/hack/Hack-Regular.ttf";
-      #fontSize = 36;
       theme = xenlism-grub-themes;
     };
   };
