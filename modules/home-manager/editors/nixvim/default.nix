@@ -10,6 +10,11 @@ in {
     neovim.enable = lib.mkEnableOption "Enables neovim with nixvim support.";
   };
   config = lib.mkIf cfg.enable {
+    imports = [
+      ./options.nix
+      ./lsp.nix
+      ./cmp.nix
+    ];
     programs.nixvim = {
       enable = true;
       enableMan = true; # enables man pages for nixvim options
@@ -18,16 +23,6 @@ in {
       clipboard.register = "unnamedplus";
       clipboard.providers = {
         xclip.enable = true;
-      };
-      opts = {
-        number = true;
-        relativenumber = true;
-        shiftwidth = 2;
-        tabstop = 2;
-        completeopt = ["menu" "menuone" "noselect"];
-        expandtab = true;
-        autoindent = true;
-        undofile = true;
       };
       extraPlugins = with pkgs.vimPlugins; [
         nvim-web-devicons
@@ -44,7 +39,6 @@ in {
           theme = "dashboard";
         };
         luasnip.enable = true;
-        coq-nvim.enable = true;
         chadtree.enable = true;
         telescope.enable = true;
         treesitter.enable = true;
