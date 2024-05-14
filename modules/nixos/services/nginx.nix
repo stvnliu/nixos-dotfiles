@@ -2,7 +2,6 @@
   services.nginx = {
     enable = true;
     virtualHosts."localhost" = {
-      serverName = "";
       root = "/var/www/localhost";
       locations = {
         "/" = {

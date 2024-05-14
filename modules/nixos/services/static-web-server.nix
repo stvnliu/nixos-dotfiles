@@ -4,7 +4,7 @@
   ];
   services.static-web-server = {
     enable = true;
-    listen = "[::]:81";
+    listen = "[::]:80";
     root = "/srv/public";
     configuration = {
       general = {
@@ -13,5 +13,5 @@
       };
     };
   };
-  networking.firewall.allowedTCPPorts = [81];
+  networking.firewall.allowedTCPPorts = [80];
 }
