@@ -6,7 +6,7 @@
     ./cmp.nix
     ./git.nix
     ./ionide.nix
-    ./lightline.nix
+    ./lualine.nix
     ./lsp.nix
     ./none-ls.nix
     ./nvim-tree.nix
@@ -20,9 +20,7 @@
   ];
   enable = true;
   globals.mapleader = " ";
-  colorschemes.kanagawa = {
-    enable = true;
-  };
+  colorschemes.gruvbox = {enable = true;};
   keymaps = [
     # Global
     # Default mode is "" which means normal-visual-op
