@@ -1,4 +1,5 @@
 {pkgs}: {
+  cd = "z";
   ls = "${pkgs.eza}/bin/exa";
   cat = "${pkgs.bat}/bin/bat";
   ll = "ls -l";
