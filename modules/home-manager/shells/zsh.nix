@@ -23,9 +23,14 @@ in
         };
         oh-my-zsh = {
           enable = true;
-          plugins = ["git"];
+          plugins = [
+            "git"
+            "rsync"
+            "zoxide"
+          ];
           theme = "agnoster";
         };
       };
+      home.packages = with pkgs; [zoxide];
     };
   }
