@@ -12,7 +12,7 @@
 
     # linux games
     torcs
-    flightgear
+    #flightgear
     openttd
     #openttd-jgrpp
   ];
