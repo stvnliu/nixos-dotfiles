@@ -11,10 +11,13 @@
     ./specialisations
     ../overlays/test-overlay.nix
   ];
-  nix.settings.experimental-features = [
-    "nix-command"
-    "flakes"
-  ];
+  nix = {
+    trustedUsers = ["root" "zhonghengl" "@wheel"];
+    settings.experimental-features = [
+      "nix-command"
+      "flakes"
+    ];
+  };
   nixpkgs.config = {
     allowUnfree = true;
     permittedInsecurePackages = [

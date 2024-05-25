@@ -7,16 +7,17 @@
 }: {
   # https://devenv.sh/basics/
   env.GREET = "devenv";
-  cachix.enable = false;
+  #cachix.enable = false;
   # https://devenv.sh/packages/
   packages = [pkgs.git];
 
   # https://devenv.sh/scripts/
-  scripts.hello.exec = "echo hello from $GREET";
+  #scripts.hello.exec = "echo hello from $GREET";
 
   enterShell = ''
-    hello
     git --version
+    alejandra --version
+    echo "Using Devenv"
   '';
 
   # https://devenv.sh/tests/
