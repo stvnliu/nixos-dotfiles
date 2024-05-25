@@ -1,7 +1,7 @@
 "$schema" = 'https://starship.rs/config-schema.json'
 
 format = """
-$direnv[](color_orange)\
+[](color_orange)\
 $os\
 $username\
 [](bg:color_yellow fg:color_orange)\
@@ -65,11 +65,6 @@ CentOS = ""
 Debian = "󰣚"
 Redhat = "󱄛"
 RedHatEnterprise = "󱄛"
-
-[direnv]
-disabled = false
-#command = '[[ $(direnv status) =~ "Found RC allowed false" ]] && echo "=========> missing: direnv allow <============"' # shows output of command
-detect_files = ['.envrc'] # can specify filters but wildcards are not supported
 
 [username]
 show_always = true
