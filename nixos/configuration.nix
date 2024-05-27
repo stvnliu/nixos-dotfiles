@@ -27,6 +27,14 @@
       "openssl-1.1.1w" # for wechat-uos
     ];
   };
+  virtualisation.docker = {
+    enable = true;
+    storageDriver = "btrfs";
+    rootless = {
+      enable = true;
+      setSocketVariable = true;
+    };
+  };
   hardware = {
     opengl = {
       enable = true;
@@ -49,9 +57,6 @@
   programs.zsh.enable = true;
   # rtkit is optional but recommended
   security.rtkit.enable = true;
-  services = {
-    auto-cpufreq.enable = true;
-  };
   networking = {
     hostName = "nixos"; # Define your hostname.
     networkmanager.enable = true;
@@ -64,7 +69,7 @@
   users.users.zhonghengl = {
     isNormalUser = true;
     description = "Zhongheng Liu";
-    extraGroups = ["networkmanager" "wheel"];
+    extraGroups = ["networkmanager" "wheel" "docker"];
   };
   environment = {
     systemPackages = with pkgs; [
