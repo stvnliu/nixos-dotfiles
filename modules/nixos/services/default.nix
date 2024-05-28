@@ -8,5 +8,6 @@
     ./printing.nix
     ./static-web-server.nix
     ./ferretdb.nix
+    ./syncthing.nix
   ];
 }
