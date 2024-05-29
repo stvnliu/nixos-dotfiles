@@ -40,7 +40,6 @@ in {
   #	fsType = "ntfs-3g";
   #	options = [ "rw" "uid=1000" ];
   #};
-  boot.kernelParams = ["quiet"];
   boot.loader = {
     efi = {
       canTouchEfiVariables = true;

@@ -13,13 +13,24 @@
   ];
   nix = {
     trustedUsers = ["root" "zhonghengl" "@wheel"];
-    settings.experimental-features = [
-      "nix-command"
-      "flakes"
-    ];
+    settings.experimental-features = ["nix-command" "flakes"];
   };
 
-  boot.kernelPackages = pkgs.linuxPackages_latest;
+  boot = {
+    #  consoleLogLevel = 3;
+    #  loader.grub.splashImage = ./bootsplash.png;
+    #  kernelParams = [
+    #    "quiet"
+    #    "bgrt_disable"
+    #    "udev.log-priority=3"
+    #  ];
+    kernelPackages = pkgs.linuxPackages_zen;
+    #  plymouth = {
+    #    enable = true;
+    #    theme = "breeze";
+    #  };
+    #  initrd.systemd.enable = true;
+  };
   nixpkgs.config = {
     allowUnfree = true;
     permittedInsecurePackages = [
@@ -35,23 +46,14 @@
     };
     sane = {
       enable = true;
-      extraBackends = with pkgs; [
-        sane-airscan
-        utsushi
-      ];
+      extraBackends = with pkgs; [sane-airscan utsushi];
     };
   };
-  users.users = {
-    zhonghengl = {
-      shell = pkgs.zsh;
-    };
-  };
+  users.users = {zhonghengl = {shell = pkgs.zsh;};};
   programs.zsh.enable = true;
   # rtkit is optional but recommended
   security.rtkit.enable = true;
-  services = {
-    auto-cpufreq.enable = true;
-  };
+  services = {auto-cpufreq.enable = true;};
   networking = {
     hostName = "nixos"; # Define your hostname.
     networkmanager.enable = true;
@@ -67,9 +69,7 @@
     extraGroups = ["networkmanager" "wheel"];
   };
   environment = {
-    systemPackages = with pkgs; [
-      devenv
-    ];
+    systemPackages = with pkgs; [devenv];
     variables = {
       FLAKE = "/home/${config.users.users.zhonghengl.name}/dotfiles";
       EDITOR = "nvim";
