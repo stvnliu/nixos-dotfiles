@@ -20,7 +20,7 @@
     udiskie
     gimp
     flameshot
-    btop
+    bottom
     bat
     eza
     trash-cli
