@@ -9,7 +9,7 @@
     thunderbird
 
     # Office suite for documents
-    libreoffice
+    libreoffice-fresh
     obsidian
 
     # PDFs
