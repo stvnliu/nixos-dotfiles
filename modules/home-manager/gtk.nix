@@ -11,16 +11,16 @@
       size = 24;
     };
     font = {
-      name = "CaskaydiaMono Nerd Font ExtraLight";
+      name = "Aileron";
       size = 10;
     };
     theme = {
-      package = pkgs.kanagawa-gtk-theme;
-      name = "Kanagawa-B";
+      package = pkgs.gruvbox-gtk-theme;
+      name = "Gruvbox-Dark-BL";
     };
     iconTheme = {
-      package = pkgs.kanagawa-icon-theme;
-      name = "Kanagawa";
+      package = pkgs.gruvbox-plus-icons;
+      name = "Gruvbox-Plus-Dark";
     };
   };
   qt = {
