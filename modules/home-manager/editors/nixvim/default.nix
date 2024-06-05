@@ -13,6 +13,7 @@
     ./options.nix
     ./telescope.nix
     ./toggleterm.nix
+    ./transparent.nix
     ./treesitter.nix
     ./trouble.nix
     ./which_key.nix
@@ -24,6 +25,12 @@
   keymaps = [
     # Global
     # Default mode is "" which means normal-visual-op
+    {
+      mode = "n";
+      key = "<leader>bg";
+      action = "<CMD>TransparentToggle<CR>";
+      options.desc = "Toggle background transparency";
+    }
     {
       key = "<C-n>";
       action = "<CMD>NvimTreeToggle<CR>";
