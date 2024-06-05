@@ -10,6 +10,7 @@
         ${pkgs.feh}/bin/feh --bg-scale ~/wallpaper.png
         ${pkgs.slstatus}/bin/slstatus &
         ibus start &
+        flameshot &
         mpris-proxy &
         udiskie &
       '';
