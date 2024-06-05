@@ -10,7 +10,10 @@ in {
     dwm.enable = lib.mkEnableOption "Enables dwm.";
   };
   config = lib.mkIf cfg.enable {
-    environment.systemPackages = with pkgs; [dmenu slstatus];
+    environment.systemPackages = with pkgs; [
+      dmenu
+      slstatus
+    ];
     programs.dconf.enable = true;
     services.xserver = {
       windowManager = {
