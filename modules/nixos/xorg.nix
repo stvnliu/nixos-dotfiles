@@ -11,6 +11,7 @@
         ${pkgs.slstatus}/bin/slstatus &
         ibus start &
         flameshot &
+        ${pkgs.pa-notify}/bin/pa-notify -t 1 &
         mpris-proxy &
         udiskie &
       '';
