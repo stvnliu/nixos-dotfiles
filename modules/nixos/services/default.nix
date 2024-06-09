@@ -7,7 +7,7 @@
     ./pipewire.nix
     ./printing.nix
     ./static-web-server.nix
-    ./ferretdb.nix
+    #./ferretdb.nix
     ./syncthing.nix
   ];
 }
