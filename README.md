@@ -1,4 +1,6 @@
 # nixos-dotfiles
+!! This dotfiles directory has since been rewritten and stored in the `stvnliu/nixos-configuration` repository.
+!! This dotfiles repository will be archived
 Personal dotfiles, including nvidia setup etc.
 ## Installation
 First, install `nixos`:
